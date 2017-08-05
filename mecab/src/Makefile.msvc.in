@@ -6,6 +6,9 @@ BIT = `getconf LONG_BIT`
 !if "$(BIT)" == "64"
     ARCH = X64
 !endif
+!if "$(PLATFORM)" == "X64"
+ARCH = X64
+!endif
     
 CFLAGS = /EHsc /O2 /GL /GA /Ob2 /nologo /W3 /MT /Zi /wd4800 /wd4305 /wd4244
 LDFLAGS = /nologo /OPT:REF /OPT:ICF /LTCG /NXCOMPAT /DYNAMICBASE /MACHINE:$(ARCH) ADVAPI32.LIB
